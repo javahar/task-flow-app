@@ -1,0 +1,22 @@
+# Java & Maven specific files
+target/
+*.class
+*.jar
+*.war
+*.ear
+.idea/
+.classpath
+.project
+.settings/
+*.iml
+maven-wrapper.jar
+
+# Node.js/React specific files
+node_modules/
+build/
+.env
+
+# Docker specific
+*.log
+docker-compose.override.yml
+.DS_Store
