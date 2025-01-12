@@ -1,0 +1,38 @@
+plugins {
+    id 'org.springframework.boot' version '3.1.2' // Spring Boot plugin
+    id 'io.spring.dependency-management' version '1.1.2' // Dependency management for Spring
+    id 'java' // Java plugin
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral() // Use Maven Central for dependencies
+}
+
+dependencies {
+    // Spring Boot dependencies
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // JPA and Hibernate support
+    implementation 'org.springframework.boot:spring-boot-starter-web' // REST API support
+
+    // PostgreSQL JDBC driver
+    runtimeOnly 'org.postgresql:postgresql'
+
+    // Spring Boot devtools (for live reload during development)
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Testing dependencies
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform() // Use JUnit 5 platform for testing
+}
+
+
+// BootJar task to package the application
+bootJar {
+    archiveFileName = 'taskLister.jar' // Rename the output JAR file
+}
